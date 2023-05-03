@@ -10,6 +10,6 @@ class Program
         Console.WriteLine("What is your last name?");
         string second =Console.ReadLine();
 
-        Console.WriteLine($"Your name is {last}, {first} {last}.");
+        Console.WriteLine($"Your name is {second}, {first} {second}.");
     }
 }
