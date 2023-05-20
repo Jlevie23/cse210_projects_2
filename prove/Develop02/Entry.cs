@@ -1,6 +1,6 @@
 public class Entry 
 {
-    private string response = "";
+    private string _response = "";
 
 
     public void CreateEntry()
@@ -8,7 +8,15 @@ public class Entry
         Prompt prompt = new Prompt();
         string p = prompt.GetRandomPrompt();
         Console.WriteLine(p);
-        response = Console.ReadLine();
+        _response = Console.ReadLine();
+        Console.Write(_response);
+    }
+
+   
+
+    public string DisplayEntry()
+    {
+        return $"{_response}";
     }
 
 }
