@@ -1,15 +1,22 @@
 public class Entry 
 {
-    private string _response = "";
+    public string _response;
+
+    public string _prompt;
+
+    public string _date;
+
 
 
     public void CreateEntry()
     {
         Prompt prompt = new Prompt();
-        string p = prompt.GetRandomPrompt();
-        Console.WriteLine(p);
+        _prompt = prompt.GetRandomPrompt();
+        Console.WriteLine(_prompt);
+        Console.WriteLine("Please enter your entry here: ");
         _response = Console.ReadLine();
-        Console.Write(_response);
+        DateTime theCurrentTime = DateTime.Now;
+        _date = theCurrentTime.ToShortDateString();
     }
 
    
