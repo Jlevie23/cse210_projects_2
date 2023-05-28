@@ -1,9 +1,13 @@
-using System;
+Word wordA = new Word("awesome");
 
-class Program
-{
-    static void Main(string[] args)
-    {
-        Console.WriteLine("Hello Develop03 World!");
-    }
-}
+wordA.Display();
+wordA.HideWord();
+wordA.Display();
+
+Word wordB = new Word("Yes");
+
+wordB.Display();
+
+Scripture s = new Scripture();
+s.ConvertStringsToWords("Jesus wept.");
+
