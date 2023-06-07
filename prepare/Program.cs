@@ -1,2 +1,2 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿Dvd TheWayOfKings = new Dvd("The way of Kings");
+TheWayOfKings.Display();

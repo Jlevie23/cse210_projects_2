@@ -1,9 +1,5 @@
-using System;
+Dvd TheWayOfKings = new Dvd("The way of Kings");
+TheWayOfKings.Display();
 
-class Program
-{
-    static void Main(string[] args)
-    {
-        Console.WriteLine("Hello Learning04 World!");
-    }
-}
+Book TheHobbit = new Book("The Hobbit", "9780044403371", "0011567893");
+TheHobbit.Display();
