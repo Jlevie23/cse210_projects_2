@@ -12,6 +12,7 @@ public class Scripture
     }
 
     public void ConvertStringsToWords(string text){
+        
         // split words into an array
 
         // for each string create a new word
