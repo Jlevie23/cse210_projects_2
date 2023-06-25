@@ -1,41 +1,67 @@
-
- public class Word
+    public class Word
 {
-    private string _word = "";
-    private bool _isShown = true;
+    private string text;
+    private bool hidden;
 
-    public Word(string word)
+    public Word(string text)
     {
-        _word = word;
+        this.text = text;
+        hidden = false;
     }
 
+    public string GetText()
+    {
+        return text;
+    }
 
     public void HideWord()
     {
-        _isShown = false;
+        hidden = true;
     }
 
-    public void ShowWord()
+    public bool IsHidden()
     {
-        _isShown = true;
+        return hidden;
     }
-
-
-    public void Display()
-    {
-        if(_isShown == true){
-
-        Console.WriteLine($"Show the word: {_word}");
-        }
-        else{
-            Console.WriteLine("_____");
-        }
-        
-    }
-
-
-
-
-
-
 }
+
+// public class Word
+// {
+//     private string _word = "";
+//     private bool _isShown = true;
+
+//     public Word(string word)
+//     {
+//         _word = word;
+//     }
+
+
+//     public void HideWord()
+//     {
+//         _isShown = false;
+//     }
+
+//     public void ShowWord()
+//     {
+//         _isShown = true;
+//     }
+
+
+//     public void Display()
+//     {
+//         if(_isShown == true){
+
+//         Console.WriteLine($"Show the word: {_word}");
+//         }
+//         else{
+//             Console.WriteLine("_____");
+//         }
+        
+//     }
+
+
+
+
+
+
+// }
