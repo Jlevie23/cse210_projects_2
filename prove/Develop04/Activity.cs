@@ -1,44 +1,93 @@
+using System;
+using System.Threading;
+
 abstract class Activity
 {
-    protected string name;
-    protected string description;
-    protected int duration;
+    protected string _name;
+    protected string _description;
+    protected int _duration;
 
-    protected Activity(string name, string description)
+    public Activity(string name, string description, int duration)
     {
-        this.name = name;
-        this.description = description;
-        duration = 0;
+        _name = name;
+        _description = description;
+        _duration = duration;
     }
 
-    protected abstract void PerformActivity();
-
-    public void Start()
+    public void Run()
     {
-        Console.WriteLine($"----- {name} Activity -----");
-        Console.WriteLine(description);
+        Console.Clear();
+        Console.WriteLine($"--- {_name} ---");
+        Console.WriteLine(_description);
         SetDuration();
-        Console.WriteLine("Get ready to begin...");
-        Pause(3);
+        PrepareToBegin();
         PerformActivity();
-        Console.WriteLine("Good job!");
-        Console.WriteLine($"You have completed the {name} activity for {duration} seconds.");
-        Pause(3);
+        ConcludeActivity();
     }
 
     protected void SetDuration()
     {
-        Console.Write("Enter the duration in seconds: ");
-        duration = Convert.ToInt32(Console.ReadLine());
+        Console.Write("Enter the duration (in seconds): ");
+        _duration = Convert.ToInt32(Console.ReadLine());
     }
 
-    protected void Pause(int seconds)
+    protected void PrepareToBegin()
     {
-        for (int i = 0; i < seconds; i++)
-        {
-            Thread.Sleep(1000);
-            Console.Write(".");
-        }
-        Console.WriteLine();
+        Console.WriteLine("Prepare to begin...");
+        Thread.Sleep(3000);
     }
+
+    protected void ConcludeActivity()
+    {
+        Console.WriteLine("Good job!");
+        Console.WriteLine($"You have completed the {_name} activity for {_duration} seconds.");
+        Thread.Sleep(3000);
+    }
+
+    protected abstract void PerformActivity();
 }
+
+// abstract class Activity
+// {
+//     protected string name;
+//     protected string description;
+//     protected int duration;
+
+//     protected Activity(string name, string description)
+//     {
+//         this.name = name;
+//         this.description = description;
+//         duration = 0;
+//     }
+
+//     protected abstract void PerformActivity();
+
+//     public void Start()
+//     {
+//         Console.WriteLine($"----- {name} Activity -----");
+//         Console.WriteLine(description);
+//         SetDuration();
+//         Console.WriteLine("Get ready to begin...");
+//         Pause(3);
+//         PerformActivity();
+//         Console.WriteLine("Good job!");
+//         Console.WriteLine($"You have completed the {name} activity for {duration} seconds.");
+//         Pause(3);
+//     }
+
+//     protected void SetDuration()
+//     {
+//         Console.Write("Enter the duration in seconds: ");
+//         duration = Convert.ToInt32(Console.ReadLine());
+//     }
+
+//     protected void Pause(int seconds)
+//     {
+//         for (int i = 0; i < seconds; i++)
+//         {
+//             Thread.Sleep(1000);
+//             Console.Write(".");
+//         }
+//         Console.WriteLine();
+//     }
+// }
