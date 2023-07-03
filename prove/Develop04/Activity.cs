@@ -1,6 +1,3 @@
-using System;
-using System.Threading;
-
 abstract class Activity
 {
     protected string _name;
