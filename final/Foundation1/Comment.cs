@@ -1,0 +1,16 @@
+class Comment
+{
+    public string CommenterName { get; set; }
+    public string CommentText { get; set; }
+
+    public Comment(string commenterName, string commentText)
+    {
+        CommenterName = commenterName;
+        CommentText = commentText;
+    }
+
+    public void DisplayComment()
+    {
+        Console.WriteLine(" - {0}: {1}", CommenterName, CommentText);
+    }
+}
